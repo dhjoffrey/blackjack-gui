@@ -11,6 +11,9 @@ bin/
 out/
 build/
 
+# Javadoc
+doc/
+
 # Rapport universitaire
 livraison/cartes/rapport/
 livraison/blackjack/rapport/
