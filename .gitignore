@@ -1,6 +1,9 @@
 # Fichiers compilés Java
 *.class
 
+# Vim swap files
+*.swp
+
 # Variables d'environnement / temporaires
 .env
 venv/
