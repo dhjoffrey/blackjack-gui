@@ -43,11 +43,14 @@ Les bonnes pratiques (POO, Design patterns) ont été appliqués pour garantir l
 - Les fichiers `.class` et dossiers `bin/`, `out/`, `build/`, `doc/` sont ignorés par Git
 
 ## Suite
-- Possibilité de faire évoluer le projet à l'avenir ;
-        - Disposer d'un menu pour paramétrer une partie (nombre de joueurs, robots)
-        - Ajouter visuellement la carte tirée en complément du score
-        - Inclure la notion de table de jeu afin que des joueurs puissent rejoindre une table en cours de partie pour se préparer à la partie suivante
-        - Inclure la notion d'emplacements (chaise /spots) afin qu'un joueur puisse occuper plusieurs spot en même temps durant une partie
-        - Améliorer et approfondir l'apparence visuel du jeu
+- Possibilité de faire évoluer le projet à l'avenir : 
+	- Disposer d'un menu pour paramétrer une partie (nombre de joueurs, robots)
+    - Ajouter visuellement la carte tirée en complément du score
+	- Inclure la notion de table de jeu afin que des joueurs puissent rejoindre une table en cours de partie pour se préparer à la partie suivante
+	- Inclure la notion d'emplacements (chaise /spots) afin qu'un joueur puisse occuper plusieurs spot en même temps durant une partie
+    - Améliorer et approfondir l'apparence visuel du jeu
+
+##
 
 Copyright (c) 2026 Joffrey MARION
+
