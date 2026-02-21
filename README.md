@@ -25,21 +25,11 @@ Les bonnes pratiques (POO, Design patterns) ont été appliqués pour garantir l
 	- Exécuter `cartes/src/app/Main.java` pour manipuler un jeu de cartes (mélanger, piocher, etc...)
 - Via ANT : 
 	- En se positionnant dans le répertoire blackjack/ ou cartes/ en ligne de commande ;
-	- `ant reload` : pour compiler, générer une distribution .jar, générer la javadoc (`ant reload` = `ant clean` + `ant compile` + `ant dist` + `ant javadoc`)
+	- `ant reload` : pour compiler, générer une distribution .jar, générer la javadoc 
+	- Les tâches du `reload` peuvent être faites indépendamment : `ant clean`, `ant compile`, `ant dist`, `ant javadoc`
 	- `ant run` : lancer le programme
 - Via la distribution : 
 	- Dans les répertoires dist/ de blackjack/ ou cartes/, exécuter `java -jar blackjack.jar` ou `java -jar cartes.jar`
-
-## Notes
-- Les fichiers `.class` et dossiers `bin/`, `out/`, `build/`, `doc/` sont ignorés par Git
-
-## Suite
-- Possibilité de faire évoluer le projet à l'avenir ; 
-	- Disposer d'un menu pour paramétrer une partie (nombre de joueurs, robots)
-	- Ajouter visuellement la carte tirée en complément du score
-	- Inclure la notion de table de jeu afin que des joueurs puissent rejoindre une table en cours de partie pour se préparer à la partie suivante
-	- Inclure la notion d'emplacements (chaise /spots) afin qu'un joueur puisse occuper plusieurs spot en même temps durant une partie
-	- Améliorer et approfondir l'apparence visuel du jeu
 
 ## Aperçu du jeu
 
@@ -49,3 +39,15 @@ Les bonnes pratiques (POO, Design patterns) ont été appliqués pour garantir l
 ### Module de cartes 
 ![module de cartes](docs/images/cartes-gui.png)
 
+## Notes
+- Les fichiers `.class` et dossiers `bin/`, `out/`, `build/`, `doc/` sont ignorés par Git
+
+## Suite
+- Possibilité de faire évoluer le projet à l'avenir ;
+        - Disposer d'un menu pour paramétrer une partie (nombre de joueurs, robots)
+        - Ajouter visuellement la carte tirée en complément du score
+        - Inclure la notion de table de jeu afin que des joueurs puissent rejoindre une table en cours de partie pour se préparer à la partie suivante
+        - Inclure la notion d'emplacements (chaise /spots) afin qu'un joueur puisse occuper plusieurs spot en même temps durant une partie
+        - Améliorer et approfondir l'apparence visuel du jeu
+
+Copyright (c) 2026 Joffrey MARION
