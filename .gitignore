@@ -1,0 +1,16 @@
+# Fichiers compilés Java
+*.class
+
+# Variables d'environnement / temporaires
+.env
+venv/
+*.log
+
+# Dossiers de build Eclipse / Ant
+bin/
+out/
+build/
+
+# Rapport universitaire
+livraison/cartes/rapport/
+livraison/blackjack/rapport/

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="blackjack" basedir="." default="compile" >
+	
+	<property name="app.name" value="blackjack" /><!-- ${app.name} -->
+	<property name="app.lib.name" value="cartes" /><!-- ${app.lib.name} -->
+	
+	<!-- 
+	- un target peut être exécuté en ligne de commande en faisant: "ant nametarget"
+	- "depends" pour spécifier que l'on a besoin du target correspondant ( "compile" ) pour executer le target courant ( "dist" ): 
+	-->
+	
+	<target name="run" depends="dist" description="Exécution du programme via la distribution">
+		<java jar="./dist/${app.name}.jar" fork="true">
+			<!-- <arg value="" /> -->
+		</java>
+	</target> 
+	
+	<target name="compile" description="Compilation de l'application">
+		<mkdir dir="./bin" />
+		<!-- cmd "javac" pour compiler les fichiers de "/src" (.java) vers "/bin" (.class): -->
+		<javac srcdir="./src" destdir="./bin" includeantruntime="false" encoding="UTF-8" >
+			<classpath>
+				<!-- on sépcifie que l'on a besoin de la librairie ${app.lib.name} : -->
+				<pathelement path="lib/${app.lib.name}.jar" />
+			</classpath>
+		</javac>
+    </target>
+	
+	<target name="dist" depends="compile" description="Génère l'exécutable de l'application">
+		<mkdir dir="./dist" />
+		<!-- créer la distribution ".jar" représentant un exécutable de "/bin": -->
+		<jar jarfile="dist/${app.name}.jar" basedir="bin" >
+			<manifest>
+				<!-- point d'entrée du programme ( main() ):  -->
+		    	<attribute name="Main-Class" value="app.Main"/>
+				<!-- pour créer la la distribution "${app.name}.jar" on as besoin de la librairie "${app.lib.name}.jar": -->
+				<attribute name="Class-Path" value="../lib/${app.lib.name}.jar" />
+		  	</manifest>
+		</jar>
+	</target>
+	
+	<!-- tagets utiles:  -->
+	
+	<target name="javadoc" description="Génère la documentation des classes">
+		<mkdir dir="./doc" />
+		<javadoc sourcepath="./src" destdir="./doc" >
+			<classpath>
+				<!-- on sépcifie que l'on a besoin de la librairie ${app.lib.name} : -->
+				<pathelement path="lib/${app.lib.name}.jar" />
+			</classpath>
+			<fileset dir="./src" defaultexcludes="yes">
+				<include name="**" />
+			</fileset>
+		</javadoc>
+	</target>
+	
+	<target name="clean" description="Néttoie ce qui a été crée par les targets et les scories d'un IDE">
+        <delete dir="bin"/>
+		<delete dir="doc"/>
+		<delete dir="dist"/>
+		
+		<delete dir=".settings"/>
+    </target>
+	
+	<target name="reload" depends="clean,compile,dist,javadoc" description="Re-génère l'ensemble des tagets">
+    </target>
+	
+</project>
